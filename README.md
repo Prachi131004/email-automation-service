@@ -1,4 +1,4 @@
-````md
+
 # Email Automation Service
 
 A Spring Boot application for sending **HTML emails with file attachments** using **Gmail SMTP**.  
