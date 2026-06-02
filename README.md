@@ -1,23 +1,24 @@
 ````md
-# 📧 Email Automation Service
+# Email Automation Service
 
-A Spring Boot project that allows users to send **HTML emails with file attachments** using **Gmail SMTP**. This project also includes **scheduled email functionality** and **asynchronous email processing**.
+A Spring Boot application for sending **HTML emails with file attachments** using **Gmail SMTP**.  
+This project also supports **scheduled email automation** and **asynchronous email processing**.
 
 ---
 
-# Features
+## Features
 
 - Send HTML emails dynamically
 - Upload file attachments
 - Gmail SMTP integration
 - Async email sending using `@Async`
-- Scheduled email using `@Scheduled`
+- Scheduled email sending using `@Scheduled`
 - Request validation using Jakarta Validation
 - Multipart form-data support
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 - Java 17
 - Spring Boot
@@ -31,7 +32,7 @@ A Spring Boot project that allows users to send **HTML emails with file attachme
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 src/main/java
@@ -52,32 +53,32 @@ src/main/java
 │   └── EmailFileApplication.java
 ```
 
-Each layer has a different responsibility:
+### Layer Responsibilities
 
-- **Controller** → Handles API requests
+- **Controller** → Handles incoming API requests
 - **DTO** → Stores request data
-- **Service** → Contains business logic for sending emails
-- **Scheduler** → Sends automated emails at a fixed time
+- **Service** → Contains email business logic
+- **Scheduler** → Sends automated emails at fixed time
 
 ---
 
-# API Endpoint
+## API Endpoint
 
-## Send Email API
+### Send Email API
 
-### URL
-
-```http
-http://localhost:8080/send
-```
-
-### Method
+**Method**
 
 ```http
 POST
 ```
 
-### Content-Type
+**URL**
+
+```http
+http://localhost:8080/send
+```
+
+**Content-Type**
 
 ```http
 multipart/form-data
@@ -85,7 +86,7 @@ multipart/form-data
 
 ---
 
-# Postman Testing
+## Postman Testing
 
 Go to:
 
@@ -93,7 +94,7 @@ Go to:
 Body → form-data
 ```
 
-Add:
+Add the following fields:
 
 | Key | Type | Example |
 |------|------|----------|
@@ -102,7 +103,7 @@ Add:
 | body | Text | `<h1>Hello</h1>` |
 | file | File | image.png |
 
-Example Request:
+### Example Request
 
 ```text
 toEmail = user@gmail.com
@@ -117,7 +118,7 @@ Click:
 Send
 ```
 
-Success Response:
+### Success Response
 
 ```json
 {
@@ -127,9 +128,11 @@ Success Response:
 
 ---
 
-# application.properties
+## Configuration
 
-File Path:
+### application.properties
+
+File path:
 
 ```text
 src/main/resources/application.properties
@@ -150,20 +153,20 @@ spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 ```
 
-### Explanation
+### Property Explanation
 
-| Property | Purpose |
-|----------|---------|
-| smtp.gmail.com | Gmail SMTP server |
-| 587 | TLS port |
-| FROM_EMAIL | Sender Gmail |
-| APP_PASSWORD | Gmail App Password |
+| Property | Description |
+|----------|-------------|
+| `smtp.gmail.com` | Gmail SMTP server |
+| `587` | TLS mail port |
+| `FROM_EMAIL` | Sender Gmail account |
+| `APP_PASSWORD` | Gmail app password |
 
 ---
 
-# Environment Variables
+## Environment Variables
 
-Set:
+Set the following environment variables:
 
 ```env
 FROM_EMAIL=yourgmail@gmail.com
@@ -172,14 +175,14 @@ APP_PASSWORD=your_app_password
 
 ---
 
-# Gmail App Password Setup
+## Gmail App Password Setup
 
-1. Open Google Account  
-2. Enable 2-Step Verification  
-3. Open App Passwords  
-4. Generate password for Mail  
-5. Copy generated password  
-6. Add it into:
+1. Open **Google Account**
+2. Enable **2-Step Verification**
+3. Open **App Passwords**
+4. Generate a password for **Mail**
+5. Copy the generated password
+6. Add it to:
 
 ```env
 APP_PASSWORD
@@ -187,7 +190,7 @@ APP_PASSWORD
 
 ---
 
-# 🔄 Project Flow
+## Project Flow
 
 ```text
 Postman Request
@@ -209,21 +212,21 @@ Email Delivered
 
 ---
 
-# ▶️ Run Project
+## Run Project
 
-Clone repository:
+### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/EmailFile.git
+git clone https://github.com/your-username/email-automation-service.git
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 mvn clean install
 ```
 
-Run application:
+### Run Application
 
 ```bash
 mvn spring-boot:run
@@ -237,7 +240,7 @@ EmailFileApplication.java
 
 ---
 
-# 👩‍💻 Author
+## Author
 
 **Prachi Prajapati**
 ````
