@@ -18,7 +18,7 @@ This project also supports **scheduled email automation** and **asynchronous ema
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Java 17
 - Spring Boot
